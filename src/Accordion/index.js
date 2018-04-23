@@ -20,6 +20,8 @@ export default class Accordion extends Component {
     };
   }
 
+  refs = {}
+
   componentWillReceiveProps({ children, allowMultiple }) {
     if (
       !isSame(
@@ -93,8 +95,7 @@ export default class Accordion extends Component {
           expanded: isExpanded,
           key: index,
           index,
-          onClick: this.handleClick.bind(this, index),
-          ref: `item-${index}`
+          onClick: this.handleClick.bind(this, index)
         });
       });
   }
